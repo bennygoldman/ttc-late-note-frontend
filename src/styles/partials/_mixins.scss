@@ -1,0 +1,407 @@
+@use './variables' as *;
+
+// ***** DO NOT USE THESE, SCROLL WAY DOWN ******
+// ***** DO NOT USE THESE, SCROLL WAY DOWN ******
+// ***** DO NOT USE THESE, SCROLL WAY DOWN ******
+// ***** DO NOT USE THESE, SCROLL WAY DOWN ******
+
+@mixin m-h1-type {
+	font-size: $m-h1-size;
+	line-height: $m-h1-lh;
+	font-weight: $wt-h1h2h3h4;
+}
+
+@mixin m-h2-type {
+	font-size: $m-h2-size;
+	line-height: $m-h2-lh;
+	font-weight: $wt-h1h2h3h4;
+}
+
+@mixin m-h3-type {
+	font-size: $m-h3-size ;
+	line-height: $m-h3-lh ;
+	font-weight: $wt-h1h2h3h4 ;
+}
+
+@mixin m-h4-type {
+	font-size: $m-h4-size;
+	line-height: $m-h4-lh;
+	font-weight: $wt-h1h2h3h4 ;
+}
+
+@mixin m-p1-type {
+	font-size: $m-p1-size;
+	line-height: $m-p1-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin m-p2-type {
+	font-size: $m-p2-size;
+	line-height: $m-p2-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin m-p3-type {
+	font-size: $m-p3-size;
+	line-height: $m-p3-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin t-h1-type {
+	font-size: $t-h1-size;
+	line-height: $t-h1-lh;
+	font-weight: $wt-h1h2h3h4;
+}
+
+@mixin t-h2-type {
+	font-size: $t-h2-size;
+	line-height: $t-h2-lh;
+	font-weight: $wt-h1h2h3h4;
+}
+
+@mixin t-h3-type {
+	font-size: $t-h3-size ;
+	line-height: $t-h3-lh ;
+	font-weight: $wt-h1h2h3h4 ;
+}
+
+@mixin t-h4-type {
+	font-size: $t-h4-size;
+	line-height: $t-h4-lh;
+	font-weight: $wt-h1h2h3h4 ;
+}
+
+@mixin t-p1-type {
+	font-size: $t-p1-size;
+	line-height: $t-p1-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin t-p2-type {
+	font-size: $t-p2-size;
+	line-height: $t-p2-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin t-p3-type {
+	font-size: $t-p3-size;
+	line-height: $t-p3-lh;
+	font-weight: $wt-p1p2p3 ;
+}
+
+@mixin logo-style {
+	background-color: $white;
+	width: 7.5rem;
+	// height: 1.5625rem;
+}
+
+@mixin button-style {
+	font-family: inherit;
+	background-color: $red;
+	color: $white;
+	text-decoration: none;
+	// width: 50%;
+	@include h3-type-label-link-button;
+	height: 2.25rem;
+	border-radius: 20px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		background-color: $white;
+		color: $red;
+		border: 1px solid $red;
+	}
+
+	@include tablet-viewport {
+		height: 2.375rem;
+		width: fit-content;
+		padding-left: $pad-med-16;
+		padding-right: $pad-med-16;
+	}
+}
+
+@mixin button-img-style {
+	// display: flex;
+	// align-items: center;
+	// justify-content: center;
+	// position: relative;
+
+	&--img {
+
+		// position: absolute;
+		// left: 0;
+		// padding: 0.5rem;
+		height: 90%;
+	}
+}
+
+@mixin tag-style {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 1.5rem;
+	width: fit-content;
+	border-radius: 20px;
+	border: none;
+	outline: none;
+	@include h3-type-label-link-button;
+	text-transform: uppercase;
+	font-family: $jost;
+	padding: .5rem;
+
+	@include tablet-viewport {
+		height: 1.625rem;
+		width: fit-content;
+
+
+	}
+
+}
+
+// ***HERE'S WHERE YOU SHOULD START*****
+// ***HERE'S WHERE YOU SHOULD START*****
+// ***HERE'S WHERE YOU SHOULD START*****
+// ***HERE'S WHERE YOU SHOULD START*****
+
+// VIEWPORTS
+
+@mixin tablet-viewport {
+	@media screen and (min-width: $tablet-breakpoint) {
+		@content;
+	}
+}
+
+@mixin desktop-viewport {
+	@media screen and (min-width: $desktop-breakpoint) {
+		@content;
+	}
+}
+
+// BORDERS
+
+@mixin divider-bottom {
+	border-bottom: $divider-anywhere;
+}
+
+@mixin divider-right {
+	border-right: $divider-anywhere;
+}
+
+
+// TYPE 
+
+@mixin h1-type-page-header {
+	@include m-h1-type;
+
+	@include tablet-viewport {
+		@include t-h1-type;
+	}
+}
+
+@mixin h2-type-sub-header {
+	@include m-h2-type;
+
+	@include tablet-viewport {
+		@include t-h2-type;
+	}
+}
+
+@mixin h3-type-label-link-button {
+	text-transform: uppercase;
+	@include m-h3-type;
+
+	@include tablet-viewport {
+		@include t-h3-type;
+	}
+
+}
+
+@mixin h4-type-table-header {
+	// color: $slate;
+	text-transform: uppercase;
+	@include m-h4-type;
+
+	@include tablet-viewport {
+		@include t-h4-type;
+	}
+}
+
+@mixin p1-type-body-large {
+	@include m-p1-type;
+
+	@include tablet-viewport {
+		@include t-p1-type;
+	}
+}
+
+@mixin p2-type-body-medium {
+	@include m-p2-type;
+
+	@include tablet-viewport {
+		@include t-p2-type;
+	}
+}
+
+@mixin p3-type-body-small {
+	@include m-p3-type;
+
+	@include tablet-viewport {
+		@include t-p3-type;
+	}
+}
+
+// LINKS
+
+@mixin inactive-nav-link-style {
+	@include button-style;
+	background: none;
+	color: $cloud;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	@include tablet-viewport {
+		padding: 1rem;
+	}
+
+	&:hover {
+		color: $white;
+		text-decoration: underline;
+	}
+
+}
+
+@mixin active-nav-link-style {
+	@include button-style;
+	background-color: $black;
+
+
+	&:hover {
+		background-color: $black;
+		text-decoration: underline;
+
+	}
+}
+
+@mixin text-link-style {
+	display: flex;
+	align-items: center;
+	gap: .25rem;
+	color: $blue;
+	text-transform: capitalize;
+	text-decoration: none;
+	@include h3-type-label-link-button;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+@mixin handwriting {
+	font-family: $rock-salt;
+	color: $red;
+	text-decoration: 2px black underline;
+}
+
+@mixin typewriting {
+	font-family: $special-elite;
+	color: $black;
+}
+
+// BUTTONS 
+
+@mixin primary-button-style {
+	@include button-style;
+}
+
+@mixin secondary-button-style {
+	@include button-style;
+	background-color: $white;
+	border: 1px solid $cloud;
+	color: $slate;
+
+	&:hover {
+		border: 1px solid $blue;
+		color: $blue;
+		background-color: $white;
+	}
+}
+
+@mixin delete-button-style {
+	@include button-style;
+	background-color: $red;
+
+	&:hover {
+		background-color: $graphite;
+	}
+
+}
+
+// TAGS
+
+
+@mixin tag-day-style {
+	@include tag-style;
+	background-color: $red;
+	color: $white;
+
+}
+
+@mixin tag-night-style {
+	@include tag-style;
+	font-family: $jost;
+	background-color: $white;
+}
+
+// FORM FIELDS
+
+@mixin form-field-style {
+	// font-family: inherit;
+	// color: $slate;
+	// background-color: $white;
+	// height: 2.25rem;
+	border: $divider-anywhere;
+	border-radius: 8px;
+	padding: 0.5rem;
+
+	&:focus {
+		outline: none;
+		// color: $black;
+		border: 1px solid $blue;
+	}
+
+	&__error {
+		border: 1px solid $red;
+	}
+
+	@include tablet-viewport {
+		height: 2.375rem;
+
+	}
+}
+
+//// // {MARGIN MIXINS}
+
+@mixin margin {
+	margin: 1rem;
+	max-width: 24rem;
+
+	@include tablet-viewport {
+		margin: 0 auto;
+		max-width: 44rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+
+	@include desktop-viewport {
+		margin: 0 auto;
+		max-width: 64rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}

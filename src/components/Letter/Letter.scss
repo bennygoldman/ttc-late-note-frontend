@@ -1,0 +1,136 @@
+@use '../../styles/partials/globals' as *;
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.graf {
+	@include handwriting;
+	text-decoration: none;
+	color: black;
+	font-size: 1.25rem;
+}
+
+.redder {
+	color: $red;
+}
+
+.paper {
+	background-color: #fff;
+	color: rgba(0, 0, 0, 0.87);
+	-webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	border-radius: 4px;
+	box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+	&:hover {
+
+		box-shadow: 0px 2px 4px -1px rgba(black, 0.2), 0px 4px 5px 0px rgba(black, 0.14), 0px 1px 10px 0px rgba(black, 0.12);
+		// border: 1px solid red;
+	}
+}
+
+.letter {
+	margin: 1rem auto;
+	padding: 1.5rem 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	font-family: $special-elite;
+	// align-items: center;
+	// justify-content: center;
+	gap: 1rem;
+
+	@include tablet-viewport {
+		max-width: 44rem;
+	}
+
+	@include desktop-viewport {
+		max-width: 64rem;
+	}
+
+	&__block--start {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	// &__address--sender {
+	// 	// display: inline-flex;
+	// 	// flex-direction: column;
+	// 	// gap: 0rem;
+	// }
+
+	// &__date {
+	// 	// display: inline-flex;
+	// 	// flex-direction: column;
+	// 	// gap: 0rem;
+	// }
+
+	&__address--recipient {
+
+		// display: inline-flex;
+		// flex-direction: column;
+		// gap: 0rem;
+		text-decoration: none;
+	}
+
+	&__block--middle {
+		display: inline-flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		>p {
+			@include p1-type-body-large;
+		}
+
+
+	}
+
+	// &__title {
+
+	// }
+
+	&__copy {
+
+		>.route-tag {
+			@include tag-day-style;
+			display: unset;
+		}
+	}
+
+	// &__block--end {
+	// 	// display: inline-flex;
+	// 	// flex-direction: column;
+	// 	// gap: 0.5rem;
+	// }
+
+	// &__closing {}
+
+	// &__signature {}
+
+	// &__end-title {
+	// 	// display: inline-flex;
+	// 	// flex-direction: column;
+	// 	// gap: 0.5rem;
+	// }
+
+	&__signature {
+		height: 4rem;
+	}
+
+}
+
+
+.handwriting {
+	@include handwriting;
+
+	&--mod {
+		font-size: 0.75rem;
+		color: black;
+		text-decoration: none;
+	}
+}
+
+.logo {
+	@include logo-style;
+	margin-left: -1rem;
+}

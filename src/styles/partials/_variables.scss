@@ -1,0 +1,101 @@
+// breakpoints
+
+$mobile-min-width: 20rem; // 320px
+$tablet-breakpoint: 48rem; // 768px
+$desktop-breakpoint: 80rem; // 1280px
+
+// margins
+
+$m-margin-1rem: 1rem;
+$t-margin-2rem: 2rem;
+
+// padding
+
+$pad-xl-32: 2rem;
+$pad-large-24: 1.5rem;
+$pad-med-16: 1rem;
+$pad-small-8: 0.5rem;
+$pad-xs-4: 0.25rem;
+
+// colors
+
+$blue: #2E66E5;
+$black: #13182C;
+$white: #FFFFFF;
+// $red: #C94515;
+$blue: #024182;
+$yellow: #f8c300;
+$slate: #5C667E;
+$cloud: #BDC5D5;
+$graphite: #232940;
+$light-grey: #F7F8F9;
+$green: #158463;
+// $red: #C4243D;
+$red: #da251d;
+
+// #C9812A
+// #DBAE6F
+// #F8C301
+
+
+// divider
+
+$divider-anywhere: 1px solid $cloud;
+
+// Font Variables
+
+// // Headings + copy
+$jost: 'Jost', sans-serif;
+
+// // Typewriting
+$special-elite: 'Special Elite', monospace;
+
+// // Handwriting
+$rock-salt: 'Rock Salt', cursive;
+
+// // 404 Page
+$font-404: 'VT323', monospace;
+
+// secondary site font
+$comic-neue: 'Comic Neue', cursive;
+// font - sizes, line heights, weights
+
+// weights
+
+$wt-h1h2h3h4: 600;
+$wt-p1p2p3: 400;
+
+// mobile
+
+$m-h1-size: 1.75rem;
+$m-h1-lh: 2.25rem;
+$m-h2-size: 1.25rem;
+$m-h2-lh: 1.75rem;
+$m-h3-size: .8125rem;
+$m-h3-lh: 1.25rem;
+$m-h4-size: .6875rem;
+$m-h4-lh: 1rem;
+$m-p1-size: .9375rem;
+$m-p1-lh: 1.625rem;
+$m-p2-size: .8125rem;
+$m-p2-lh: 1.25rem;
+$m-p3-size: .6875rem;
+$m-p3-lh: 1rem;
+
+
+// tablet
+
+$t-h1-size: 2rem;
+$t-h1-lh: 2.5rem;
+$t-h2-size: 1.5rem;
+$t-h2-lh: 2rem;
+$t-h3-size: .875rem;
+$t-h3-lh: 1.375rem;
+$t-h4-size: .75rem;
+$t-h4-lh: 1.125rem;
+$t-p1-size: 1rem;
+$t-p1-lh: 1.75rem;
+$t-p2-size: .875rem;
+$t-p2-lh: 1.375rem;
+$t-p3-size: .75rem;
+$t-p3-lh: 1.125rem;
