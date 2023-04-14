@@ -6,7 +6,7 @@ const Step4 = () => {
 		<div className="step step-4">
 			<h1 className="h1 h1-step-4">Hang tight while we prepare your note...</h1>
 			<Link to="/review-draft">
-				<div class="loader"></div>
+				<div className="loader"></div>
 			</Link>
 		</div>
 	);

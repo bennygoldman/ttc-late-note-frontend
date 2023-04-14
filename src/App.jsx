@@ -17,6 +17,12 @@ axios.defaults.withCredentials = true
 
 function App() {
 
+  const formData = localStorage.getItem('formData');
+
+  if (!formData) {
+    localStorage.setItem('formData', JSON.stringify({}));
+  }
+
   return (
     <div className="App">
       <BrowserRouter>

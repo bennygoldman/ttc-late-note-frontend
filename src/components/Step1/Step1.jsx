@@ -1,7 +1,16 @@
 import './Step1.scss'
 import Button from '../Button/Button';
 
-const Step1 = ({}) => {
+const Step1 = () => {
+	const handleFormSave = () => {
+		const formName = document.querySelector('#form-name').value;
+		const formData = JSON.parse(localStorage.getItem('formData'));
+
+		formData.name = formName;
+
+		localStorage.setItem('formData', JSON.stringify(formData));
+	}
+
 	return (
 		<div className="step step-1">
 			<h1 className="h1 h1-step-1">TTC Late Note</h1>
@@ -10,11 +19,12 @@ const Step1 = ({}) => {
 				<p>Let's get started. First, tell us your name.</p>
 				<div className="form-field">
 					<label htmlFor="">name</label>
-					<input type="text" placeholder="enter your name..." />
+					<input id="form-name" type="text" placeholder="enter your name..." />
 				</div>
 			</div>
 			<Button
 				name="next"
+				onClick={handleFormSave}
 				to="/find-delay"
 				isButton={false}
 			/>

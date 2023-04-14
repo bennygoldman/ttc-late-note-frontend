@@ -1,6 +1,6 @@
 import './Button.scss'
 import {Link} from 'react-router-dom';
-const Button = ({name, className, to, isButton}) => {
+const Button = ({name, className, to, isButton, onClick}) => {
 	// return (
 	// 	<button type="button">next</button>
 	// );
@@ -11,7 +11,7 @@ const Button = ({name, className, to, isButton}) => {
 		);
 	} else {
 		return (
-			<Link to={to} className={`link-button ${className}`}>{name}</Link>
+			<Link to={to} className={`link-button ${className}`} onClick={onClick}>{name}</Link>
 		)
 	}
 };

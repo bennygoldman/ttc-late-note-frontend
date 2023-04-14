@@ -5,6 +5,24 @@ import dayjs from 'dayjs'
 import axios from 'axios'
 
 const Step2 = () => {
+	const formData = JSON.parse(localStorage.getItem('formData'));
+	console.log('Form Data:', formData);
+
+	const handleFormSave = () => {
+		const formDate = document.querySelector('#form-date').value;
+		const formMode = document.querySelector('#form-mode').value;
+		const formLine = document.querySelector('#form-line').value;
+		const formTime = document.querySelector('#form-time').value;
+		// const formData = JSON.parse(localStorage.getItem('formData'));
+		formData.date = formDate;
+		formData.mode = formMode;
+		formData.line = formLine;
+		formData.time = formTime;
+
+		localStorage.setItem('formData', JSON.stringify(formData));
+		console.log(formData)
+	}
+
 	const mongofyDate = (dateString) => {
 		return dayjs(dateString).format('YYYY-MM-DD');
 	}
@@ -111,7 +129,7 @@ const Step2 = () => {
 
 	return (
 		<div className="step step-2">
-			<h1 className="h1 h1-step-2">Thanks! Now tell us what happened:</h1>
+			<h1 className="h1 h1-step-2">Thanks, {formData.name}! Now tell us what happened:</h1>
 			<div className="form-area form-area-step-2">
 				<div className="form-field">
 					<p>I remember it just like it was...</p>
@@ -119,7 +137,8 @@ const Step2 = () => {
 					{/* <input type="date" min="2023-03-31" max="2023-04-13" /> */}
 					<input
 						type="date"
-						id="delayDate"
+						// id="delayDate"
+						id="form-date"
 						onChange={handleDateChange}
 						value={selectedDate}
 						min={dates.length > 0 ? dates[0] : ''}
@@ -133,7 +152,7 @@ const Step2 = () => {
 						{modes &&
 							modes !== undefined ?
 							modes.map((mode) => {
-								return (<option key={mode} value={mode}>{mode}</option>)
+								return (<option id="form-mode" key={mode} value={mode}>{mode}</option>)
 							})
 							: "No types"
 						}
@@ -153,7 +172,7 @@ const Step2 = () => {
 						{lines &&
 							lines !== undefined ?
 							lines.map((line) => {
-								return (<option key={line} value={line}>{line}</option>)
+								return (<option id="form-line" key={line} value={line}>{line}</option>)
 							})
 							: "No Lines"
 						}
@@ -168,15 +187,22 @@ const Step2 = () => {
 						<option value="4:20pm">4:20pm</option> */}
 						{times && times !== undefined ? times.map(({time, id}) => {
 							return (
-								<option key={time} value={id}>{time}</option>)
+								<option id="form-time" key={time} value={id}>{time}</option>)
 						})
 							: "No Times"
 						}
 					</select>
 				</div>
 			</div>
+			{/* <Button
+				name="next"
+				to="/enter-details"
+				isButton={false}
+			/>
+			 */}
 			<Button
 				name="next"
+				onClick={handleFormSave}
 				to="/enter-details"
 				isButton={false}
 			/>
