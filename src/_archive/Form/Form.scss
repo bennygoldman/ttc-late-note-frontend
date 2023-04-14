@@ -1,0 +1,45 @@
+@use '../../styles/partials/typography' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/globals' as *;
+@use '../../styles/partials/mixins' as *;
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	// border: 1px solid $red;
+	border-radius: 1.25rem;
+	width: fit-content;
+	margin: 0 auto;
+	gap: 1rem;
+}
+
+// .form-field {
+// 	display: inline-flex;
+// 	flex-direction: column;
+// 	width: 100%;
+// 	gap: .25rem;
+
+// 	>label {
+// 		@include h3-type-label-link-button;
+// 	}
+
+// 	>input {
+// 		@include form-field-style;
+// 	}
+
+// 	>select {
+// 		@include form-field-style;
+// 	}
+
+// }
+
+// .button-box {
+// 	display: inline-flex;
+
+// 	>button {
+// 		@include primary-button-style;
+// 		width: auto;
+// 	}
+// }
